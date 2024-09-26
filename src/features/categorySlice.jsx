@@ -6,7 +6,7 @@ export const getData = createAsyncThunk("categorySlice/getData", async () => {
   const response = await axios('https://fakestoreapi.com/products/categories');
   return response.data;
 });
-console.log(response.data);
+
 
 export const categorySlice = createSlice({
 
