@@ -21,7 +21,7 @@ const navigate=useNavigate()
             Clarusway 
           </Typography>
 
-        
+    
            
             <Button color="inherit" onClick={()=>navigate("/basket")} ><LocalGroceryStoreIcon/></Button>
        
