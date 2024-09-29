@@ -5,9 +5,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Container } from '@mui/material';
 
 export default function Basket() {
-  return (
+  return (<Container>
     <Card sx={{ maxWidth: 345 ,margin:"auto"}}>
       <CardMedia
         component="img"
@@ -29,5 +30,6 @@ export default function Basket() {
         <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
+    </Container>
   );
 }

@@ -13,12 +13,15 @@ export const categorySlice= createSlice({
 
 
     initialState: {
-        kategoriler:[],
+        items:[],
         loading: true,
+        currentCategory:"all"
     },
 
     reducers: {
-        filterCategory: ()=> {},
+        setCategory: (state,action)=> {
+            state.currentCategory=action.payload
+        },
     },
     extraReducers: (builder)=>{
         builder
@@ -26,13 +29,13 @@ export const categorySlice= createSlice({
             state.loading = true;
         })
         .addCase(getData.fulfilled, (state, action) => {
-            state.kategoriler = action.payload;
+            state.items = action.payload;
     
             state.loading = false;
           });
     }
 })
 
-export const { filterCategory} = categorySlice.actions;
+export const { setCategory} = categorySlice.actions;
 
 export default categorySlice.reducer;
