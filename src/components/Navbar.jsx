@@ -17,8 +17,8 @@ const navigate=useNavigate()
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, cursor: "pointer" }}
-          >
-            Clarusway 
+          ><Link style={{color:"white",textDecoration:"none"}} to="/"> Clarusway </Link>
+           
           </Typography>
 
     

@@ -15,6 +15,8 @@ import { getData, setCategory } from "../features/categorySlice"; // setCategory
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 import { getHomeData } from "../features/homeSlice";
+import { useNavigate } from "react-router-dom";
+import { addToBasket } from "../features/basketSlice";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -33,6 +35,8 @@ const Home = () => {
   const filteredProducts = currentCategory === 'all'
     ? products
     : products.filter((product) => product.category === currentCategory);
+
+    const navigate=useNavigate()
 
   return (
     <>
@@ -96,8 +100,12 @@ const Home = () => {
                 {b.category}
               </Typography>
 
-              <IconButton color="secondary" aria-label="add to shopping cart" >
-                <AddShoppingCartIcon />
+              <IconButton color="secondary" aria-label="add to shopping cart"  onClick={() => {
+    dispatch(addToBasket(b));
+   
+              }}
+                 >
+                <AddShoppingCartIcon  />
               </IconButton>
             </CardActions>
           </Card>
