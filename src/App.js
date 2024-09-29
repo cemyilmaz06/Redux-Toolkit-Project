@@ -6,11 +6,11 @@ function App() {
 
   
   return (
-    <div>
+ 
      <Provider store={store}>
       <AppRouter/>
      </Provider>
-    </div>
+  
   );
 }
 

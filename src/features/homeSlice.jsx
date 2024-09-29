@@ -2,12 +2,13 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import axios from "axios";
 
-export const getData = createAsyncThunk("homeSlice/getData", async () => {
+export const getHomeData = createAsyncThunk("homeSlice/getHomeData", async () => {
   const response = await axios(
     'https://fakestoreapi.com/products'
   );
 
-  return response.data.articles;
+  return response.data;
+ 
 });
 
 export const homeSlice = createSlice({
@@ -24,11 +25,11 @@ export const homeSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
-      .addCase(getData.pending, (state) => {
+      .addCase(getHomeData.pending, (state) => {
         state.loading = true;
       })
-      .addCase(getData.fulfilled, (state, action) => {
-        state.haberler = action.payload;
+      .addCase(getHomeData.fulfilled, (state, action) => {
+        state.products = action.payload;
 
         state.loading = false;
       });
