@@ -29,7 +29,7 @@ export const homeSlice = createSlice({
         state.loading = true;
       })
       .addCase(getHomeData.fulfilled, (state, action) => {
-        state.products = action.payload;
+        state.products = action.payload;// API'den gelen ürünler state.products içine kaydedilir
 
         state.loading = false;
       });

@@ -13,9 +13,12 @@ export const categorySlice= createSlice({
 
 
     initialState: {
-        items:[],
-        loading: true,
-        currentCategory:"all"
+        items:[],// Kategorilerin tutulacağı bir dizi (başlangıçta boş).
+        loading: true,// Uygulama başlangıcında verilerin yüklenip yüklenmediğini gösteren bir durum (başlangıçta 'true' çünkü veriler yüklenmemiş).
+
+        currentCategory:"all"// Seçili kategoriyi temsil eden değer (başlangıçta 'all', yani tüm kategoriler gösteriliyor).
+
+
     },
 
     reducers: {
