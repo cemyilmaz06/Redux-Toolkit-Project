@@ -7,12 +7,13 @@ import {
   CardContent,
   CardMedia,
   Container,
+  IconButton,
   Typography,
 } from "@mui/material";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getData } from "../features/categorySlice";
-
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 
 import { getHomeData } from "../features/homeSlice";
@@ -52,21 +53,23 @@ const Home = () => {
       >
         {products.map((b, index) => (
           <Card sx={{ maxWidth: 345, maxHeight: 600, m: 5}}>
-            <CardMedia sx={{backgroundSize: "cover",backgroundPosition:"center",backgroundRepeat:"no-repeat",width:"200px",margin:"auto"}} component="img" image={b.image} height="250" />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
+            <CardMedia sx={{width:"200px",margin:"auto"}} component="img" image={b.image} height="250vh" />
+            <CardContent sx={{display:"flex",justifyContent:"space-between",gap:"1.5rem"}}>
+              <Typography height="15vh" gutterBottom variant="h5" component="div">
                 {b.title}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {b.price}
+              <Typography fontWeight="bold" fontSize="1.5rem" variant="body2" color="text.secondary">
+                {b.price}$
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button  size="small">CLEAR</Button>
+            <CardActions sx={{display:"flex",justifyContent:"space-between"}}>
+            <Typography gutterBottom variant="h5" component="div">
+                {b.category}
+              </Typography>
 
-              <Button size="small" href="" target="_blank">
-                DETAIL
-              </Button>
+              <IconButton  color="secondary" aria-label="add to shopping cart" >
+        <AddShoppingCartIcon />
+      </IconButton>
             </CardActions>
           </Card>
         ))}
