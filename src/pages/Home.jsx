@@ -63,7 +63,7 @@ const Home = () => {
       <Box
         display="flex"
         alignItems="center"
-        justifyContent="space-evenly"
+        justifyContent="center"
         flexWrap="wrap"
       >
         {filteredProducts.map((b, index) => (
@@ -86,10 +86,10 @@ const Home = () => {
                 gap: "1.5rem",
               }}
             >
-              <Typography height="15vh" gutterBottom variant="h5" component="div">
+              <Typography sx={{fontSize:"1rem",fontWeight:"400"}} height="10vh" gutterBottom variant="h5" component="div">
                 {b.title}
               </Typography>
-              <Typography fontWeight="bold" fontSize="1.5rem" variant="body2" color="text.secondary">
+              <Typography fontWeight="bold" fontSize="1rem" variant="body2" color="text.secondary">
                 {b.price}$
               </Typography>
             </CardContent>

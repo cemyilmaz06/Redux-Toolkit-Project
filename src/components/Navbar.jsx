@@ -19,7 +19,7 @@ const Navbar = () => {
       <AppBar position="static" color="secondary">
         <Toolbar>
           <Link to="/">
-            <img src={logo} alt="Clarusway Logo" width="70px" />
+            <img src={logo} alt="Clarusway Logo" width="50px" />
           </Link>
 
           <Typography

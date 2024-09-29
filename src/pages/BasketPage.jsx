@@ -35,19 +35,17 @@ const BasketPage = () => {
           flexWrap: "wrap",
           minHeight: "100%",
           gap: "1rem",
-          textAlign:"center"
+          justifyContent:"center"
         }}
       >
         {basketItems.length === 0 ? (
-          <Typography 
-            sx={{fontSize: "1.5rem", color: "red" ,margin:"auto"}}
-          >
+          <Typography sx={{ fontSize: "1.5rem", color: "red", margin: "auto" }}>
             You have no items in your shopping cart,
-            <Link to="/">start adding some!</Link>
+            <Link style={{textDecoration:"none"}} to="/">start adding some!</Link>
           </Typography>
         ) : (
           basketItems.map((item) => (
-            <Card key={item.id} sx={{ maxWidth: 345, margin: "auto" }}>
+            <Card key={item.id} sx={{ maxWidth: 345 }}>
               <CardMedia
                 component="img"
                 image={item.image}
@@ -65,12 +63,19 @@ const BasketPage = () => {
                   gap: "1.5rem",
                 }}
               >
-                <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "text.secondary",
+                    fontWeight: "600",
+                    height: "10vh",
+                  }}
+                >
                   {item.title}
                 </Typography>
                 <Typography
                   fontWeight="bold"
-                  fontSize="1.5rem"
+                  fontSize="1.2rem"
                   variant="body2"
                   color="text.secondary"
                 >
@@ -106,32 +111,34 @@ const BasketPage = () => {
         )}
         {/* Subtotal ve Cart işlemleri */}
 
-        {basketItems.length > 0 && (<Container
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginTop: "20px",
-          }}
-        >
-          {/* Sepetteki toplam fiyatı gösteriyoruz */}
-          <Typography fontWeight="bold" fontSize="1.5rem">
-            Subtotal: {totalPrice.toFixed(2)}$
-          </Typography>
-          <Button
+        {basketItems.length > 0 && (
+          <Container
             sx={{
-              backgroundColor: "red",
-              color: "white",
-              padding: "5px 20px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginTop: "20px",
             }}
-            onClick={() => dispatch(clearBasket())
-              // Sepeti boşaltma işlemi
-            }
           >
-            EMPTY CART
-          </Button>
-        </Container>)}
-        
+            {/* Sepetteki toplam fiyatı gösteriyoruz */}
+            <Typography fontWeight="bold" fontSize="1.5rem">
+              Subtotal: {totalPrice.toFixed(2)}$
+            </Typography>
+            <Button
+              sx={{
+                backgroundColor: "red",
+                color: "white",
+                padding: "5px 20px",
+              }}
+              onClick={
+                () => dispatch(clearBasket())
+                // Sepeti boşaltma işlemi
+              }
+            >
+              EMPTY CART
+            </Button>
+          </Container>
+        )}
       </Container>
     </Box>
   );
