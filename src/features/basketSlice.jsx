@@ -23,6 +23,10 @@ const basketSlice = createSlice({
         state.basketItems.push({ ...action.payload, quantity: 1 }); // Ürünü sepete ekle ve miktarı 1 olarak ayarla
       }
     },
+    clearBasket: (state) => {
+        state.basketItems = []; // Sepeti boşaltıyoruz
+      },
+    
     incrementQuantity: (state, action) => {
       const productInBasket = state.basketItems.find(
         (item) => item.id === action.payload
@@ -47,7 +51,7 @@ const basketSlice = createSlice({
   },
 });
 
-export const { addToBasket, incrementQuantity, decrementQuantity, removeFromBasket } =
+export const { addToBasket, incrementQuantity, decrementQuantity, removeFromBasket ,clearBasket} =
   basketSlice.actions;
 
 export default basketSlice.reducer;
