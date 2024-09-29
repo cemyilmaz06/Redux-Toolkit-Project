@@ -35,13 +35,15 @@ const BasketPage = () => {
           flexWrap: "wrap",
           minHeight: "100%",
           gap: "1rem",
-          justifyContent:"center"
+          justifyContent: "center",
         }}
       >
         {basketItems.length === 0 ? (
           <Typography sx={{ fontSize: "1.5rem", color: "red", margin: "auto" }}>
             You have no items in your shopping cart,
-            <Link style={{textDecoration:"none"}} to="/">start adding some!</Link>
+            <Link style={{ textDecoration: "none" }} to="/">
+              start adding some!
+            </Link>
           </Typography>
         ) : (
           basketItems.map((item) => (
@@ -125,8 +127,9 @@ const BasketPage = () => {
               Subtotal: {totalPrice.toFixed(2)}$
             </Typography>
             <Button
+           
               sx={{
-                backgroundColor: "red",
+                backgroundColor: "red", 
                 color: "white",
                 padding: "5px 20px",
               }}
