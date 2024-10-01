@@ -67,7 +67,7 @@ const Home = () => {
         flexWrap="wrap"
       >
         {filteredProducts.map((b, index) => (
-          <Card sx={{ maxWidth: 260, maxHeight: 600, m: 5 }} key={index}>
+          <Card sx={{ maxWidth: 250, maxHeight: 600, m: 5 }} key={index}>
             <CardMedia
            
               component="img"
@@ -86,7 +86,7 @@ const Home = () => {
                 gap: "1.5rem",
               }}
             >
-              <Typography sx={{fontSize:"1rem",fontWeight:"400"}} height="15vh" gutterBottom variant="h5" component="div">
+              <Typography sx={{fontSize:"1rem",fontWeight:"400"}} height="13vh" gutterBottom variant="h5" component="div">
                 {b.title}
               </Typography>
               <Typography fontWeight="bold" fontSize="1rem" variant="body2" color="text.secondary">
