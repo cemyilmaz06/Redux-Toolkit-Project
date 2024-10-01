@@ -67,7 +67,7 @@ const Home = () => {
         flexWrap="wrap"
       >
         {filteredProducts.map((b, index) => (
-          <Card sx={{ maxWidth: 345, maxHeight: 600, m: 5 }} key={index}>
+          <Card sx={{ maxWidth: 250, maxHeight: 600, m: 5 }} key={index}>
             <CardMedia
            
               component="img"

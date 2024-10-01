@@ -35,11 +35,12 @@ const basketSlice = createSlice({
         productInBasket.quantity += 1; // Miktarı artır
       }
     },
+    // find state.basketItems içinde, action.payload ile aynı id'ye sahip ürünü bulmak için kullanılıyor.
     decrementQuantity: (state, action) => {
       const productInBasket = state.basketItems.find(
         (item) => item.id === action.payload
       );
-      if (productInBasket && productInBasket.quantity > 1) {
+      if (productInBasket.quantity > 1) {
         productInBasket.quantity -= 1; // Miktarı azalt
       }
     },
