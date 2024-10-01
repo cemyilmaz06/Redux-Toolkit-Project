@@ -58,7 +58,7 @@ const Home = () => {
           </Button>
         ))}
       </Container>
-
+<Container>
       {/* Ürün Kartları */}
       <Box
         display="flex"
@@ -111,6 +111,7 @@ const Home = () => {
           </Card>
         ))}
       </Box>
+      </Container>
     </>
   );
 };
